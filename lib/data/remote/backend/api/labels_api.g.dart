@@ -12,9 +12,7 @@ class _LabelsApi implements LabelsApi {
   _LabelsApi(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??= '/labels/v1';
-  }
+  });
 
   final Dio _dio;
 
@@ -34,7 +32,7 @@ class _LabelsApi implements LabelsApi {
     )
             .compose(
               _dio.options,
-              '',
+              '/labels/v1',
               queryParameters: queryParameters,
               data: _data,
             )

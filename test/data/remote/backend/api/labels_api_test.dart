@@ -1,23 +1,26 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:habitforge_frontend/data/remote/backend/api/labels_api.dart';
 import 'package:habitforge_frontend/data/remote/backend/responses/label_response.dart';
+import 'package:habitforge_frontend/data/remote/backend/api/labels_api.dart';
+import 'package:http_mock_adapter/http_mock_adapter.dart';
 
 import '../../../common/test_data_generator.dart';
-import '../../../test_tools/api_test_tools.dart';
+import '../../../test_tools/common/api_test_tools.dart';
 
 void main() {
-  final testLabelsApi = LabelsApi(testDio);
-  final testLabelsResponseList = TestDataGenerator.generateTestLabelResponseList();
+  final labelsApi = LabelsApi(testDio);
+
+  final testLabelResponseList = TestDataGenerator.generateTestLabelResponseList();
 
   test('getLabels returns a list of LabelResponse', () async {
     // Given
-    enqueueResponse(HttpMethod.get, "", responseBody: testLabelsResponseList);
+    enqueueResponse(HttpMethod.get, "/labels/v1", responseBody: testLabelResponseList);
 
     // When
-    final response = await testLabelsApi.getLabels();
+    final result = await labelsApi.getLabels();
 
     // Then
-    expect(response, isA<List<LabelResponse>>());
-    expect(response.length, testLabelsResponseList.length);
+    expect(result, isA<List<LabelResponse>>());
+    expect(result.length, testLabelResponseList.length);
   });
 }

@@ -1,5 +1,5 @@
 import 'package:habitforge_frontend/data/remote/backend/api/labels_api.dart';
-import 'package:habitforge_frontend/data/remote/backend/mappings/label_mapper.dart';
+import 'package:habitforge_frontend/data/remote/backend/mappers/label_mapper.dart';
 import 'package:habitforge_frontend/domain/label.dart';
 
 class LabelsRepository {

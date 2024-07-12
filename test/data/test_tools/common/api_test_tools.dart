@@ -15,8 +15,6 @@ enqueueResponse(
 }) {
   testDio.options = BaseOptions(baseUrl: "https://test.com/$path");
   final dioAdapter = DioAdapter(dio: testDio);
-  requestBody ??= <String, dynamic>{};
-  responseBody ??= <String, dynamic>{};
   switch (httpMethod) {
     case HttpMethod.get:
       dioAdapter.onGet(path, (server) => server.reply(responseCode, responseBody), queryParameters: queryParams);

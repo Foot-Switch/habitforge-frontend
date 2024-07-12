@@ -24,7 +24,7 @@ class TestDataGenerator {
     return List.generate(size, (_) => generateTestLabel());
   }
 
-  static LabelResponse generateTestLabelDto() {
+  static LabelResponse generateTestLabelResponse() {
     return LabelResponse()
       ..id = faker.randomGenerator.numbers(9, 1).join()
       ..name = faker.person.name()
@@ -36,6 +36,6 @@ class TestDataGenerator {
 
   static List<LabelResponse> generateTestLabelResponseList() {
     int size = Random().nextInt(randomListSizeLimit) + 1;
-    return List.generate(size, (_) => generateTestLabelDto());
+    return List.generate(size, (_) => generateTestLabelResponse());
   }
 }
