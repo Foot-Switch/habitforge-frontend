@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:habitforge_frontend/application/common/view_model_handler.dart';
 import 'package:habitforge_frontend/application/view_models/labels_view_model.dart';
 import 'package:habitforge_frontend/application/view_models/view_model_provider.dart';
+import 'package:habitforge_frontend/application/widgets/common/habit_forge_app_bar.dart';
 import 'package:habitforge_frontend/application/widgets/labels/label_list_item.dart';
 import 'package:habitforge_frontend/domain/label.dart';
 
@@ -19,6 +20,9 @@ class _LabelsScreenState extends ConsumerState<LabelsScreen> with ViewModelHandl
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: HabitForgeAppBar(
+        title: "Labels",
+      ),
       body: FutureBuilder(
         future: labelsViewModel.getLabels(),
         builder: (BuildContext context, AsyncSnapshot<List<Label>> snapshot) {

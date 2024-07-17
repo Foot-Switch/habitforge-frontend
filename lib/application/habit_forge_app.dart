@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitforge_frontend/application/common/app_colors.dart';
+import 'package:habitforge_frontend/application/common/colors/app_colors.dart';
 import 'package:habitforge_frontend/application/common/routing/router.dart';
 
 class HabitForgeApp extends StatelessWidget {
