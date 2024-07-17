@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:habitforge_frontend/application/common/router.dart';
+import 'package:habitforge_frontend/application/common/routing/route_graph.dart';
+import 'package:habitforge_frontend/application/common/routing/router.dart';
 import 'package:habitforge_frontend/application/common/utils.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
